@@ -2,7 +2,7 @@ NAME = ex00
 C++ = c++
 C++FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
