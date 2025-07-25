@@ -2,22 +2,22 @@
 
 Animal::Animal()
 {
-    std::cout << "Animal default constructor called" <<std::endl;
+    std::cout << RED << "Animal default constructor called" << RESET << std::endl;
 }
 
 Animal::Animal(const Animal &copy): type(copy.getType())
 {
-    std::cout << "Animal copy constructor called" <<std::endl;
+    std::cout << RED << "Animal copy constructor called" << RESET << std::endl;
 }
 
 Animal::~Animal()
 {
-    std::cout << "Animal destructor called" <<std::endl;
+    std::cout << RED << "Animal destructor called" << RESET << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &src)
 {
-    std::cout << "Animal assignment operator called" <<std::endl;
+    std::cout << RED << "Animal assignment operator called" << RESET << std::endl;
     if (this != &src) {
         type = src.getType();
     }

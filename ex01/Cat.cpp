@@ -1,25 +1,36 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat() : Animal(), brain(NULL)
 {
-    std::cout << "Cat default constructor called" <<std::endl;
+    std::cout << YELLOW << "Cat default constructor called" << RESET << std::endl;
 
     type = "Cat";
+    brain = new Brain();
+    if (!brain) {
+        std::cout << "Malloc error" << std::endl;
+        exit(1);
+    }
 }
 
-Cat::Cat(const Cat &copy): Animal(copy)
+Cat::Cat(const Cat &copy): Animal(copy), brain(NULL)
 {
-    std::cout << "Cat copy constructor called" <<std::endl;
+    std::cout << YELLOW << "Cat copy constructor called" << RESET << std::endl;
+    brain = new Brain();
+    if (!brain) {
+        std::cout << "Malloc error" << std::endl;
+        exit(1);
+    }
 }
 
 Cat::~Cat()
 {
-    std::cout << "Cat destructor called" <<std::endl;
+    std::cout << YELLOW << "Cat destructor called" << RESET << std::endl;
+    delete brain;
 }
 
 Cat &Cat::operator=(const Cat &src)
 {
-    std::cout << "Cat assignment operator called" <<std::endl;
+    std::cout << YELLOW << "Cat assignment operator called" << RESET << std::endl;
     if (this != &src) {
         Animal::operator=(src);
     }
@@ -28,5 +39,5 @@ Cat &Cat::operator=(const Cat &src)
 
 void Cat::makeSound() const
 {
-    std::cout << "Miiiaaaaauuuuuuu....." <<std::endl;
+    std::cout << YELLOW << "Miiiaaaaauuuuuuu....." << RESET << std::endl;
 }
