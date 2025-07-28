@@ -6,20 +6,12 @@ Cat::Cat() : Animal(), brain(NULL)
 
     type = "Cat";
     brain = new Brain();
-    if (!brain) {
-        std::cout << "Malloc error" << std::endl;
-        exit(1);
-    }
 }
 
 Cat::Cat(const Cat &copy): Animal(copy), brain(NULL)
 {
     std::cout << YELLOW << "Cat copy constructor called" << RESET << std::endl;
     brain = new Brain();
-    if (!brain) {
-        std::cout << "Malloc error" << std::endl;
-        exit(1);
-    }
 }
 
 Cat::~Cat()
