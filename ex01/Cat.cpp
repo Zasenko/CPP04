@@ -31,5 +31,15 @@ Cat &Cat::operator=(const Cat &src)
 
 void Cat::makeSound() const
 {
-    std::cout << YELLOW << "Miiiaaaaauuuuuuu....." << RESET << std::endl;
+    std::cout << YELLOW << "Meow!" << RESET << std::endl;
+}
+
+void Cat::setBrainIdea(int i, const std::string &idea)
+{
+    brain->setIdea(i, idea);
+}
+
+std::string Cat::getBrainIdea(int i) const
+{
+    return brain->getIdea(i);
 }

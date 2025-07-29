@@ -31,3 +31,13 @@ void Dog::makeSound() const
 {
     std::cout << GREEN << "Bark! Bark! Bark!" << RESET << std::endl;
 }
+
+void Dog::setBrainIdea(int i, const std::string &idea)
+{
+    brain->setIdea(i, idea);
+}
+
+std::string Dog::getBrainIdea(int i) const
+{
+    return brain->getIdea(i);
+}
