@@ -4,6 +4,13 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
+void testAnimalConstructors();
+void testDogConstructors();
+void testCatConstructors();
+void testPolymorphism();
+void testWrongAnimal();
+void testHeapAllocation();
+
 int main(void)
 {
     testAnimalConstructors();

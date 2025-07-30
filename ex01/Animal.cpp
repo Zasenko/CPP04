@@ -1,11 +1,10 @@
 #include "Animal.hpp"
 
-Animal::Animal()
-{
-    std::cout << RED << "Animal default constructor called" << RESET << std::endl;
+Animal::Animal(){
+    std::cout << RED << "Animal" << RESET << "default constructor called " << std::endl;
 }
 
-Animal::Animal(const Animal &copy): type(copy.getType())
+Animal::Animal(const Animal &copy) : type(copy.getType())
 {
     std::cout << RED << "Animal copy constructor called" << RESET << std::endl;
 }
