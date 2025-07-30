@@ -11,10 +11,10 @@ class Brain
     public:
         Brain();
         Brain(const Brain &copy);
-        ~Brain();
+        virtual ~Brain();
         Brain &operator=(const Brain &src);
         void setIdea(int i, const std::string &idea);
         std::string getIdea(int i) const;
-}
+};
 
 #endif
