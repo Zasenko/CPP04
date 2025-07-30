@@ -1,7 +1,7 @@
 #include "Animal.hpp"
 
 Animal::Animal(){
-    std::cout << RED << "Animal" << RESET << "default constructor called " << std::endl;
+    std::cout << RED << "Animal default constructor called" << RESET << std::endl;
 }
 
 Animal::Animal(const Animal &copy) : type(copy.getType())
@@ -23,7 +23,9 @@ Animal &Animal::operator=(const Animal &src)
     return *this;
 }
 
-void Animal::makeSound() const {}
+void Animal::makeSound() const {
+    std::cout << RED << "Default sound" << RESET << std::endl;
+}
 
 std::string Animal::getType() const
 {

@@ -23,7 +23,10 @@ Cat &Cat::operator=(const Cat &src)
     std::cout << YELLOW << "Cat assignment operator called" << RESET << std::endl;
     if (this != &src) {
         Animal::operator=(src);
-        *brain = *src.brain;
+        if (brain != NULL) {
+            delete brain;
+        }
+		brain = new Brain(*src.brain);
     }
     return *this;
 }

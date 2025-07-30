@@ -25,7 +25,7 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &src)
 }
 
 void WrongAnimal::makeSound() const {
-    std::cout << "Bla bla bla!" << std::endl;
+    std::cout << "WrongAnimal sound" << std::endl;
 }
 
 std::string WrongAnimal::getType() const

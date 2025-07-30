@@ -1,7 +1,5 @@
-#include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
 void testAnimalConstructors();
@@ -23,7 +21,7 @@ int main(void)
 
 void testAnimalConstructors()
 {
-    std::cout << "Test: Animal constructors" << std::endl;
+    std::cout << "\nTest: Animal constructors" << std::endl;
 
     Animal a;
     Animal b(a);
@@ -34,18 +32,10 @@ void testAnimalConstructors()
     std::cout << "Type: " << c.getType() << std::endl;
     c.makeSound();
 }
-// Test: Animal constructors  
-// Animal default constructor called  
-// Animal copy constructor called  
-// Animal default constructor called  
-// Animal assignment operator called  
-// Type:  
-// Type:  
-// Type:  
 
 void testDogConstructors()
 {
-    std::cout << "Test: Dog constructors" << std::endl;
+    std::cout << "\nTest: Dog constructors" << std::endl;
     Dog dog;
     Dog dog2(dog);
     Dog dog3;
@@ -57,25 +47,10 @@ void testDogConstructors()
     dog2.makeSound();
     dog3.makeSound();
 }
-// Test: Dog constructors  
-// Animal default constructor called  
-// Dog default constructor called  
-// Animal copy constructor called  
-// Dog copy constructor called  
-// Animal default constructor called  
-// Dog default constructor called  
-// Dog assignment operator called  
-// Animal assignment operator called  
-// Type: Dog  
-// Type: Dog  
-// Type: Dog  
-// Bark! Bark! Bark!  
-// Bark! Bark! Bark!  
-// Bark! Bark! Bark!
 
 void testCatConstructors()
 {
-    std::cout << "Test: Cat constructors" << std::endl;
+    std::cout << "\nTest: Cat constructors" << std::endl;
     Cat cat;
     Cat cat2(cat);
     Cat cat3;
@@ -87,24 +62,9 @@ void testCatConstructors()
     cat2.makeSound();
     cat3.makeSound();
 }
-// Test: Cat constructors  
-// Animal default constructor called  
-// Cat default constructor called  
-// Animal copy constructor called  
-// Cat copy constructor called  
-// Animal default constructor called  
-// Cat default constructor called  
-// Cat assignment operator called  
-// Animal assignment operator called  
-// Type: Cat  
-// Type: Cat  
-// Type: Cat  
-// Meow!  
-// Meow!  
-// Meow!
 
 void testPolymorphism() {
-    std::cout << "Test: Polymorphism from subject" << std::endl;
+    std::cout << "\nTest: Polymorphism from subject" << std::endl;
     const Animal *meta = new Animal();
     const Animal *j = new Dog();
     const Animal *i = new Cat();
@@ -118,28 +78,12 @@ void testPolymorphism() {
     delete i;
     delete j;
 }
-// Test: Polymorphism from subject  
-// Animal default constructor called  
-// Animal default constructor called  
-// Dog default constructor called  
-// Animal default constructor called  
-// Cat default constructor called  
-// Dog  
-// Cat  
-// Meow!  
-// Bark! Bark! Bark!
-
-// Cat destructor called  
-// Animal destructor called  
-// Dog destructor called  
-// Animal destructor called  
-// Animal destructor called
-
 void testWrongAnimal() {
-    std::cout << "Test: WrongAnimal test" << std::endl;
+    std::cout << "\nTest: WrongAnimal test" << std::endl;
     const WrongAnimal *meta = new WrongAnimal();
     const WrongAnimal *i = new WrongCat();
     std::cout << i->getType() << " " << std::endl;
+    std::cout << meta->getType() << " " << std::endl;
     i->makeSound();
     meta->makeSound();
 
@@ -147,22 +91,9 @@ void testWrongAnimal() {
     delete i;
 }
 
-// Test: WrongAnimal test  
-// WrongAnimal default constructor called  
-// WrongAnimal default constructor called  
-// WrongCat default constructor called  
-// WrongCat  
-// WrongAnimal sound  
-// WrongAnimal sound  
-// WrongCat destructor called  
-// WrongAnimal destructor called  
-// WrongAnimal destructor called
-
-// WrongCat::makeSound() не вызывается, потому что в WrongAnimal makeSound() не virtual
-
 void testHeapAllocation()
 {
-    std::cout << "Test: Heap allocation and destruction" << std::endl;
+    std::cout << "\nTest: Heap allocation and destruction" << std::endl;
 
     Animal *animal = new Animal();
     Dog *dog = new Dog();
@@ -206,50 +137,3 @@ void testHeapAllocation()
     delete cat_copy;
     delete animal_copy;
 }
-
-// Test: Heap allocation and destruction  
-// Animal default constructor called  
-// Animal default constructor called  
-// Dog default constructor called  
-// Animal default constructor called  
-// Cat default constructor called  
-
-// Copying:  
-// Animal copy constructor called  
-// Animal copy constructor called  
-// Dog copy constructor called  
-// Animal copy constructor called  
-// Cat copy constructor called  
-
-// (makeSound вызывает:)  
-// (ничего — Animal)  
-// Bark! Bark! Bark!  
-// Meow!  
-
-// c:  
-// a: Dog  
-// d: Cat  
-
-// Assignment:  
-// Animal assignment operator called  
-// Dog assignment operator called  
-// Animal assignment operator called  
-// Cat assignment operator called  
-
-// (ещё раз makeSound)  
-// (ничего)  
-// Bark! Bark! Bark!  
-// Meow!  
-
-// c:  
-// a: Dog  
-// d: Cat  
-
-// Destructors:  
-// Animal destructor called  
-// Dog destructor called  
-// Animal destructor called  
-// Cat destructor called  
-// Animal destructor called  
-// Cat destructor called  
-// Animal destructor called

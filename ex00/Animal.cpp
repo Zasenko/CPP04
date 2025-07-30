@@ -24,7 +24,9 @@ Animal &Animal::operator=(const Animal &src)
     return *this;
 }
 
-void Animal::makeSound() const {}
+void Animal::makeSound() const {
+    std::cout << RED << "Default sound" << RESET << std::endl;
+}
 
 std::string Animal::getType() const
 {
